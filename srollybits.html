@@ -1,0 +1,31 @@
+
+<html>
+	<head>
+		<style>
+			body	{
+				margin:0px;
+			}
+			#dogcontainer	{
+				width:500px;
+				height:2000px;
+				background:red;
+			}
+			#dogimg	{
+				position:fixed;
+				width:0%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="dogcontainer">
+			<img id="dogimg" src="https://images-na.ssl-images-amazon.com/images/I/71WkAt92-WL._SX425_.jpg" />
+		</div>
+		<script>
+			document.addEventListener('scroll',e=>{
+				let max = document.getElementById('dogcontainer').clientHeight - window.innerHeight
+				let scrollRat = window.document.body.scrollTop / max
+				console.log(scrollRat)
+				document.getElementById('dogimg').style.width = (100 * scrollRat) + '%'
+			})
+		</script>
+	</body>
